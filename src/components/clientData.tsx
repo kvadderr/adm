@@ -35,7 +35,7 @@ const ClientData = (
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({id: singleData.user.id, balance: populateBalance})
       };
-      await fetch("http://82.202.194.12:4000/user/populate", requestOptions);
+      await fetch("https://kuku12875.ru:4000/user/populate", requestOptions);
       openNotification();
     };
     

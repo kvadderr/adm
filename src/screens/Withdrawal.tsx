@@ -27,7 +27,7 @@ const Withdrawal = () => {
   };
 
   useEffect(() => {
-    fetch("http://82.202.194.12:4000/withdrawals/actual")
+    fetch("https://kuku12875.ru:4000/withdrawals/actual")
       .then((res) => res.json())
       .then((data) => setOperatorData(data));
   }, []);
@@ -63,7 +63,7 @@ const Withdrawal = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: editingOperator.id, status: status, balance: balance })
     };
-    await fetch("http://82.202.194.12:4000/withdrawals", requestOptions);
+    await fetch("https://kuku12875.ru:4000/withdrawals", requestOptions);
     onDeleteRow();
     handleCancel();
   };

@@ -45,7 +45,7 @@ const DetailDrawer = ({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ login: singleUser.login, isBanned: b, banCause: "Заблокирован главным администратором" })
       };
-      await fetch("http://82.202.194.12:4000/auth/ban/", requestOptions);
+      await fetch("https://kuku12875.ru:4000/auth/ban/", requestOptions);
       
       setEditingOperator((pre) => {
         console.log(pre);

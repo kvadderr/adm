@@ -14,7 +14,7 @@ const FAQ: React.FC = () => {
   const [FAQData, setFAQData] = useState();
 
   useEffect(() => {
-    fetch("http://82.202.194.12:4000/faq")
+    fetch("https://kuku12875.ru:4000/faq")
       .then((res) => res.json())
       .then((data) => setFAQData(data));
   }, []);

@@ -33,12 +33,12 @@ const Traffic = () => {
     const dataFetch = async () => {
 
         const data = await(
-          await fetch("http://82.202.194.12:4000/analytics/traffic/operator/"+startDay)
+          await fetch("https://kuku12875.ru:4000/analytics/traffic/operator/"+startDay)
         ).json();
         setOperatorTraffic(data)
 
         const data2 = await(
-            await fetch("http://82.202.194.12:4000/analytics/traffic/client/"+startDay)
+            await fetch("https://kuku12875.ru:4000/analytics/traffic/client/"+startDay)
           ).json();
         setClientTraffic(data2);
         setUserData(userData);

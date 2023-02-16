@@ -22,7 +22,7 @@ const CallDrawerClient = ({
     const [callHistory, setCallHistory] = useState([]);
 
     useEffect(() => {
-        fetch("http://82.202.194.12:4000/call/"+urls+"/"+operatorId)
+        fetch("https://kuku12875.ru:4000/call/"+urls+"/"+operatorId)
           .then((res) => res.json())
           .then((data) => setCallHistory(data));
           console.log('callHistory', callHistory)

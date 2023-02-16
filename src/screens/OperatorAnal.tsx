@@ -24,7 +24,7 @@ const OperatorAnal = () => {
   const dataFetch = async () => {
     setLoading(true);
     const data = await(
-      await fetch("http://82.202.194.12:4000/analytics/operator/"+startDay+"/"+endDay)
+      await fetch("https://kuku12875.ru:4000/analytics/operator/"+startDay+"/"+endDay)
     ).json();
     setDataSource(data)
     setLoading(false);

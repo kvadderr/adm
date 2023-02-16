@@ -46,7 +46,7 @@ const OperatorData = ({
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({editingOperator})
         };
-        await fetch("http://82.202.194.12:4000/operator", requestOptions);
+        await fetch("https://kuku12875.ru:4000/operator", requestOptions);
         saveData()
     };
 
