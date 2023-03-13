@@ -19,7 +19,7 @@ const Analytics: React.FC = () => {
   const dataFetch = async () => {
     setLoading(true);
     const data = await(
-      await fetch("https://kuku12875.ru/:4000/analytics/example/"+startDay+"/"+endDay)
+      await fetch("http://localhost:4000/analytics/example/"+startDay+"/"+endDay)
     ).json();
     setData(data)
     setLoading(false);

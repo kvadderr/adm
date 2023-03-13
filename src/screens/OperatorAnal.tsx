@@ -24,7 +24,7 @@ const OperatorAnal = () => {
   const dataFetch = async () => {
     setLoading(true);
     const data = await(
-      await fetch("https://kuku12875.ru:4000/analytics/operator/"+startDay+"/"+endDay)
+      await fetch("http://localhost:4000/analytics/operator/"+startDay+"/"+endDay)
     ).json();
     setDataSource(data)
     setLoading(false);
@@ -45,7 +45,7 @@ const OperatorAnal = () => {
     data.push({
       key: i,
       login: dataSource[i].login,
-      fio: dataSource[i].FIO,
+      nickname: dataSource[i].nickname,
       balance: dataSource[i].balance + ' $',
       createdAt: dataSource[i].createdAt,
       max: dataSource[i].max,
@@ -57,9 +57,9 @@ const OperatorAnal = () => {
 
   const columns = [
     {
-      title: 'FIO',
-      dataIndex: 'fio',
-      key: 'fio',
+      title: 'nickname',
+      dataIndex: 'nickname',
+      key: 'nickname',
       fixed: 'left',
     },
     {

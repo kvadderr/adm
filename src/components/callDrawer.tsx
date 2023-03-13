@@ -20,14 +20,14 @@ const ReviewDrawer = ({
 }: Props ) => {
     
     const [callHistory, setCallHistory] = useState([]);
-
+    console.log('operatorId', operatorId)
     useEffect(() => {
-        fetch("https://kuku12875.ru:4000/call/"+urls+"/"+operatorId)
+        fetch("http://localhost:4000/call/"+urls+"/"+operatorId)
           .then((res) => res.json())
           .then((data) => setCallHistory(data));
-          console.log('callHistory', callHistory)
       }, [open]);
 
+      console.log('callHistory', callHistory)
     return(
 
         <Drawer width={640} placement="right" closable={false} onClose={onClose} open={open}>
@@ -47,7 +47,7 @@ const ReviewDrawer = ({
             <List.Item>
                 <List.Item.Meta
                 avatar={<Avatar src={item.client.avatar} />}
-                title={<a href="https://ant.design">{item.client.FIO}</a>}
+                title={<a href="https://ant.design">{item.client.nickname}</a>}
                 description= { 'Продолжительность разговора: ' + item.duration + ' секунд'}
                 />
             </List.Item>

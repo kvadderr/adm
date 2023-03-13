@@ -9,7 +9,7 @@ const Support = () => {
   const [singleOperatorData, setSingleOperatorData] = useState({}); 
 
   useEffect(() => {
-    fetch("https://kuku12875.ru:4000/support")
+    fetch("http://localhost:4000/support")
       .then((res) => res.json())
       .then((data) => setOperatorData(data));
   }, []);
@@ -18,7 +18,7 @@ const Support = () => {
   for (let i = 0; i < operatorData.length; i++ ){
     data.push({
       key: i,
-      fio: operatorData[i].user.FIO,
+      nickname: operatorData[i].user.nickname,
       message: operatorData[i].message,
       avatar: operatorData[i].user.avatar
     })
@@ -36,8 +36,8 @@ const Support = () => {
     },
     {
       title: 'ФИО',
-      dataIndex: 'fio',
-      key: 'fio',
+      dataIndex: 'nickname',
+      key: 'nickname',
       width: '20%',
     },
     {

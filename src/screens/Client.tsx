@@ -15,7 +15,7 @@ const Client = () => {
   const [operatorId, setOperatorId] = useState(1);
 
   useEffect(() => {
-    fetch("https://kuku12875.ru:4000/client")
+    fetch("http://localhost:4000/client")
       .then((res) => res.json())
       .then((data) => setDataSource(data));
   }, []);
@@ -25,12 +25,13 @@ const Client = () => {
     data.push({
       key: i,
       login: dataSource[i].user.login,
-      fio: dataSource[i].user.FIO,
+      nickname: dataSource[i].user.nickname,
       balance: dataSource[i].user.balance + ' $',
+      bonus: dataSource[i].user.bonus + 'B',
       singleData: dataSource[i],
       avatar: dataSource[i].user.avatar,
       tags: ['ASMR', 'Психолог'],
-      operatorId: dataSource[i].id,
+      operatorId: dataSource[i].userId,
     })
   }
 
@@ -46,8 +47,8 @@ const Client = () => {
     },
     {
       title: 'ФИО',
-      dataIndex: 'fio',
-      key: 'fio',
+      dataIndex: 'nickname',
+      key: 'nickname',
       width: '20%',
     },
     {
@@ -60,6 +61,11 @@ const Client = () => {
       title: 'Баланс',
       dataIndex: 'balance',
       key: 'balance',
+    },
+    {
+      title: 'Бонусов',
+      dataIndex: 'bonus',
+      key: 'bonus',
     },
     {
       title: 'История звонков',

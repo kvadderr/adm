@@ -22,12 +22,15 @@ export const menuItems: MenuProps['items'] = [
     getItem('Приложение', 'sub1', <AppstoreOutlined />, [
         getItem(<Link to="/FAQ">FAQ</Link>, '3'),
         getItem(<Link to="/withdrawal">Заявки на вывод средств</Link>, '13'),
+        getItem(<Link to="/bonus">Система бонусов</Link>, '19'),
+        getItem(<Link to="/specialization">Учет специализаций</Link>, '20'),
+        getItem(<Link to="/config">Конфигурация</Link>, '21'),
     ]),
   
     getItem('Пользователи', 'sub2', <UserSwitchOutlined />, [
         getItem( <Link to="/operator">Операторы</Link>, '4'),
         getItem( <Link to="/client">Клиенты</Link>, '5'),
-        getItem( <Link to="/manager">Менеджеры</Link>,'6'),
+        getItem( <Link to="/moderator">Временная заглушка</Link>,'6'),
     ]),
   
     getItem('Аналитика', 'sub3', <DotChartOutlined />, [

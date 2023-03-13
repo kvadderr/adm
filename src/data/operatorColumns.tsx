@@ -12,8 +12,8 @@ export const operatorColumns = [
     },
     {
       title: 'ФИО',
-      dataIndex: 'fio',
-      key: 'fio',
+      dataIndex: 'nickname',
+      key: 'nickname',
       width: '20%',
     },
     {

@@ -27,7 +27,7 @@ const Withdrawal = () => {
   };
 
   useEffect(() => {
-    fetch("https://kuku12875.ru:4000/withdrawals/actual")
+    fetch("http://localhost:4000/withdrawals/actual")
       .then((res) => res.json())
       .then((data) => setOperatorData(data));
   }, []);
@@ -36,7 +36,7 @@ const Withdrawal = () => {
   for (let i = 0; i < operatorData.length; i++ ){
     data.push({
       key: i,
-      fio: operatorData[i].user.FIO,
+      nickname: operatorData[i].user.nickname,
       login: operatorData[i].user.login,
       avatar: operatorData[i].user.avatar,
       balance: operatorData[i].user.balance,
@@ -61,9 +61,9 @@ const Withdrawal = () => {
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ id: editingOperator.id, status: status, balance: balance })
+        body: JSON.stringify({ id: editingOperator.id, user_id: editingOperator.userId, status: status, balance: balance })
     };
-    await fetch("https://kuku12875.ru:4000/withdrawals", requestOptions);
+    await fetch("http://localhost:4000/withdrawals", requestOptions);
     onDeleteRow();
     handleCancel();
   };
@@ -86,8 +86,8 @@ const Withdrawal = () => {
     },
     {
       title: 'ФИО',
-      dataIndex: 'fio',
-      key: 'fio',
+      dataIndex: 'nickname',
+      key: 'nickname',
       width: '20%',
     },
     {

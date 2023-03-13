@@ -43,9 +43,9 @@ const DetailDrawer = ({
       const requestOptions = {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ login: singleUser.login, isBanned: b, banCause: "Заблокирован главным администратором" })
+          body: JSON.stringify({ id: singleUser.id, isBanned: b, banCause: "Заблокирован главным администратором" })
       };
-      await fetch("https://kuku12875.ru:4000/auth/ban/", requestOptions);
+      await fetch("http://localhost:4000/user/ban/", requestOptions);
       
       setEditingOperator((pre) => {
         console.log(pre);
@@ -59,7 +59,7 @@ const DetailDrawer = ({
         <Row>
           <Col span={12}>
             <DescriptionItem title="Логин" content= { singleUser.login } />
-            <DescriptionItem title="ФИО" content= { singleUser.FIO } />
+            <DescriptionItem title="ФИО" content= { singleUser.nickname } />
           </Col>
           <Col span={12}>
             <DescriptionItem title="Пароль" content= { singleUser.password } />

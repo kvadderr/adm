@@ -14,22 +14,24 @@ const Operator = () => {
   const [operatorId, setOperatorId] = useState(1);
 
   useEffect(() => {
-    fetch("https://kuku12875.ru:4000/operator")
+    fetch("http://localhost:4000/operator")
       .then((res) => res.json())
       .then((data) => setDataSource(data));
   }, []);
 
   const data = [];
   for (let i = 0; i < dataSource.length; i++ ){
+    console.log('dataSource[i]', dataSource[i])
     data.push({
       key: i,
       login: dataSource[i].user.login,
-      fio: dataSource[i].user.isBanned ? <Badge status="error" text={dataSource[i].user.FIO} /> : dataSource[i].user.FIO,
+      nickname: dataSource[i].user.isBanned ? <Badge status="error" text={dataSource[i].user.nickname} /> : dataSource[i].user.nickname,
       balance: dataSource[i].user.balance + ' $',
       singleData: dataSource[i],
       tags: ['ASMR', 'Психолог'],
       avatar: dataSource[i].user.avatar,
       operatorId: dataSource[i].id,
+      userId: dataSource[i].userId
     })
   }
 
@@ -40,11 +42,11 @@ const Operator = () => {
             src={avatar}
       />
     },
-    {title: 'ФИО', dataIndex: 'fio', key: 'fio', width: '20%'},
+    {title: 'ФИО', dataIndex: 'nickname', key: 'nickname', width: '20%'},
     {title: 'Логин', dataIndex: 'login', key: 'login', width: '15%'},
     {title: 'Баланс', dataIndex: 'balance', key: 'balance'},
-    {title: 'История звонков', dataIndex: 'operatorId', key: 'operatorId', 
-        render: (operatorId) => <a onClick={() => onOpenCall(operatorId)}>Отчет</a>},
+    {title: 'История звонков', dataIndex: 'userId', key: 'userId', 
+        render: (userId) => <a onClick={() => onOpenCall(userId)}>Отчет</a>},
     {title: 'Подробнее', dataIndex: 'singleData', key: 'singleData', 
         render: (record) => <a onClick={() => onEditOperator(record)}>Подробнее</a>},
     {title: 'Отзывы', dataIndex: 'detail', key: 'detail', 
@@ -52,6 +54,7 @@ const Operator = () => {
   ]; 
 
   const onOpenCall = (data) => {
+    console.log(data)
     setOperatorId(data);
     setOpenCall(true)
   }

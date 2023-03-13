@@ -17,6 +17,8 @@ import ClientAnal from './screens/ClientAnal'
 import OperatorAnal from './screens/OperatorAnal'
 import Traffic from './screens/Traffic'
 import Withdrawal from './screens/Withdrawal'
+import Bonus from './screens/Bonus'
+import Specialization from './screens/Specialization'
 
 const { Content, Sider } = Layout;
 
@@ -62,6 +64,8 @@ function App() {
                 <Route path='/operatorAnal' element={ <OperatorAnal/> }/>
                 <Route path='/traffic' element={ <Traffic/> }/>
                 <Route path='/withdrawal' element={ <Withdrawal/>} />
+                <Route path='/bonus' element={ <Bonus/>} />
+                <Route path='/specialization' element={ <Specialization/>} />
               </Routes>
             </Content>
         </Layout>
