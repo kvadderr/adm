@@ -27,7 +27,7 @@ const Withdrawal = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:4000/withdrawals/actual")
+    fetch("http://95.213.216.132:4000/withdrawals/actual")
       .then((res) => res.json())
       .then((data) => setOperatorData(data));
   }, []);
@@ -63,7 +63,7 @@ const Withdrawal = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: editingOperator.id, user_id: editingOperator.userId, status: status, balance: balance })
     };
-    await fetch("http://localhost:4000/withdrawals", requestOptions);
+    await fetch("http://95.213.216.132:4000/withdrawals", requestOptions);
     onDeleteRow();
     handleCancel();
   };

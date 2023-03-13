@@ -33,12 +33,12 @@ const Traffic = () => {
     const dataFetch = async () => {
 
         const data = await(
-          await fetch("http://localhost:4000/analytics/traffic/operator/"+startDay)
+          await fetch("http://95.213.216.132:4000/analytics/traffic/operator/"+startDay)
         ).json();
         setOperatorTraffic(data)
 
         const data2 = await(
-            await fetch("http://localhost:4000/analytics/traffic/client/"+startDay)
+            await fetch("http://95.213.216.132:4000/analytics/traffic/client/"+startDay)
           ).json();
         setClientTraffic(data2);
         setUserData(userData);

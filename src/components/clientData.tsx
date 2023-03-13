@@ -45,7 +45,7 @@ const setNewPayment = (value: number) => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({id: singleData.user.id, balance: populateBalance})
       };
-      await fetch("http://localhost:4000/user/populate", requestOptions);
+      await fetch("http://95.213.216.132:4000/user/populate", requestOptions);
       openNotification();
     };
 
@@ -55,7 +55,7 @@ const setNewPayment = (value: number) => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({id: singleData.user.id, bonus: populateBonus})
       };
-      await fetch("http://localhost:4000/user/populateBonus", requestOptions);
+      await fetch("http://95.213.216.132:4000/user/populateBonus", requestOptions);
       openNotification();
     };
 
@@ -65,7 +65,7 @@ const setNewPayment = (value: number) => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({id: singleData.user.id, amount: payment})
       };
-      await fetch("http://localhost:4000/user/payment", requestOptions);
+      await fetch("http://95.213.216.132:4000/user/payment", requestOptions);
       openNotification();
     };
     

@@ -34,7 +34,7 @@ export const BonusCard = (item) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({id: id})
             };
-            await fetch("http://localhost:4000/bonus", requestOptions);
+            await fetch("http://95.213.216.132:4000/bonus", requestOptions);
         }
     }
 
@@ -50,7 +50,7 @@ export const BonusCard = (item) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        await fetch("http://localhost:4000/bonus", requestOptions);
+        await fetch("http://95.213.216.132:4000/bonus", requestOptions);
     }
 
     return (
@@ -83,7 +83,7 @@ export const SpecializationCard = (item) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({id: id})
             };
-            await fetch("http://localhost:4000/specialization", requestOptions);
+            await fetch("http://95.213.216.132:4000/specialization", requestOptions);
         }
     }
 
@@ -97,7 +97,7 @@ export const SpecializationCard = (item) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        await fetch("http://localhost:4000/specialization", requestOptions);
+        await fetch("http://95.213.216.132:4000/specialization", requestOptions);
     }
 
     return (

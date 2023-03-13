@@ -50,7 +50,7 @@ const OperatorData = ({
     useEffect(() => {
         const tagArr = [];
         let arr = [];
-        fetch("http://localhost:4000/specialization")
+        fetch("http://95.213.216.132:4000/specialization")
           .then((res) => res.json())
           .then((data) => {
             data.map(element => {
@@ -86,7 +86,7 @@ const OperatorData = ({
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        await fetch("http://localhost:4000/operator/updateStatus", requestOptions);
+        await fetch("http://95.213.216.132:4000/operator/updateStatus", requestOptions);
 
       };
 
@@ -111,7 +111,7 @@ const OperatorData = ({
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({operator})
         };
-        await fetch("http://localhost:4000/operator", requestOptions);
+        await fetch("http://95.213.216.132:4000/operator", requestOptions);
         saveData()
     };
 
@@ -129,7 +129,7 @@ const OperatorData = ({
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({operator})
         };
-        await fetch("http://localhost:4000/operator", requestOptions);
+        await fetch("http://95.213.216.132:4000/operator", requestOptions);
         saveData()
     }
 

@@ -12,7 +12,7 @@ const Specialization: React.FC = () => {
   const [specialization, setSpecialization] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/specialization")
+    fetch("http://95.213.216.132:4000/specialization")
       .then((res) => res.json())
       .then((data) => setSpecialization(data));
   }, []);
