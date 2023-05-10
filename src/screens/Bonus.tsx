@@ -12,7 +12,7 @@ const Bonus: React.FC = () => {
   const [bonus, setBonus] = useState([]);
 
   useEffect(() => {
-    fetch("http://95.213.216.132:4000/bonus")
+    fetch("http://65.109.234.249:4000/bonus")
       .then((res) => res.json())
       .then((data) => setBonus(data));
   }, []);

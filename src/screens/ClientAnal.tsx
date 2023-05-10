@@ -23,7 +23,7 @@ const ClientAnal = () => {
   const dataFetch = async () => {
     setLoading(true);
     const data = await(
-      await fetch("http://95.213.216.132:4000/analytics/client/"+startDay+"/"+endDay)
+      await fetch("http://65.109.234.249:4000/analytics/client/"+startDay+"/"+endDay)
     ).json();
     setDataSource(data)
     setLoading(false);

@@ -9,7 +9,7 @@ const Support = () => {
   const [singleOperatorData, setSingleOperatorData] = useState({}); 
 
   useEffect(() => {
-    fetch("http://95.213.216.132:4000/support")
+    fetch("http://65.109.234.249:4000/support")
       .then((res) => res.json())
       .then((data) => setOperatorData(data));
   }, []);

@@ -14,7 +14,7 @@ const Operator = () => {
   const [operatorId, setOperatorId] = useState(1);
 
   useEffect(() => {
-    fetch("http://95.213.216.132:4000/operator")
+    fetch("http://65.109.234.249:4000/operator")
       .then((res) => res.json())
       .then((data) => setDataSource(data));
   }, []);
