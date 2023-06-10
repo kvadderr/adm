@@ -9,7 +9,7 @@ const Support = () => {
   const [singleOperatorData, setSingleOperatorData] = useState({}); 
 
   useEffect(() => {
-    fetch("http://65.109.234.249:4000/support")
+    fetch("https://dijo.space:4000/api/support")
       .then((res) => res.json())
       .then((data) => setOperatorData(data));
   }, []);

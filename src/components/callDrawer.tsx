@@ -22,7 +22,7 @@ const ReviewDrawer = ({
     const [callHistory, setCallHistory] = useState([]);
     console.log('operatorId', operatorId)
     useEffect(() => {
-        fetch("http://65.109.234.249:4000/call/"+urls+"/"+operatorId)
+        fetch("https://dijo.space:4000/api/call/"+urls+"/"+operatorId)
           .then((res) => res.json())
           .then((data) => setCallHistory(data));
       }, [open]);

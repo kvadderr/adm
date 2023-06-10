@@ -27,7 +27,7 @@ const Withdrawal = () => {
   };
 
   useEffect(() => {
-    fetch("http://65.109.234.249:4000/withdrawals/actual")
+    fetch("https://dijo.space:4000/api/withdrawals/actual")
       .then((res) => res.json())
       .then((data) => setOperatorData(data));
   }, []);
@@ -63,7 +63,7 @@ const Withdrawal = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id: editingOperator.id, user_id: editingOperator.userId, status: status, balance: balance })
     };
-    await fetch("http://65.109.234.249:4000/withdrawals", requestOptions);
+    await fetch("https://dijo.space:4000/api/withdrawals", requestOptions);
     onDeleteRow();
     handleCancel();
   };

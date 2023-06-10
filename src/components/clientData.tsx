@@ -45,7 +45,7 @@ const setNewPayment = (value: number) => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({id: singleData.user.id, balance: populateBalance})
       };
-      await fetch("http://65.109.234.249:4000/user/populate", requestOptions);
+      await fetch("https://dijo.space:4000/api/user/populate", requestOptions);
       openNotification();
     };
 
@@ -55,7 +55,7 @@ const setNewPayment = (value: number) => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({id: singleData.user.id, bonus: populateBonus})
       };
-      await fetch("http://65.109.234.249:4000/user/populateBonus", requestOptions);
+      await fetch("https://dijo.space:4000/api/user/populateBonus", requestOptions);
       openNotification();
     };
 
@@ -65,7 +65,7 @@ const setNewPayment = (value: number) => {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({id: singleData.user.id, amount: payment})
       };
-      await fetch("http://65.109.234.249:4000/user/payment", requestOptions);
+      await fetch("https://dijo.space:4000/api/user/payment", requestOptions);
       openNotification();
     };
     

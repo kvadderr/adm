@@ -19,7 +19,7 @@ const Analytics: React.FC = () => {
   const dataFetch = async () => {
     setLoading(true);
     const data = await(
-      await fetch("http://65.109.234.249:4000/analytics/example/"+startDay+"/"+endDay)
+      await fetch("https://dijo.space:4000/api/analytics/example/"+startDay+"/"+endDay)
     ).json();
     setData(data)
     setLoading(false);

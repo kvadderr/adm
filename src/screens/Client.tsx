@@ -15,7 +15,7 @@ const Client = () => {
   const [operatorId, setOperatorId] = useState(1);
 
   useEffect(() => {
-    fetch("http://65.109.234.249:4000/client")
+    fetch("https://dijo.space:4000/api/client")
       .then((res) => res.json())
       .then((data) => setDataSource(data));
   }, []);

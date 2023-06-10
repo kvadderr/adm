@@ -45,7 +45,7 @@ const DetailDrawer = ({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ id: singleUser.id, isBanned: b, banCause: "Заблокирован главным администратором" })
       };
-      await fetch("http://65.109.234.249:4000/user/ban/", requestOptions);
+      await fetch("https://dijo.space:4000/api/user/ban/", requestOptions);
       
       setEditingOperator((pre) => {
         console.log(pre);

@@ -34,7 +34,7 @@ export const BonusCard = (item) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({id: id})
             };
-            await fetch("http://65.109.234.249:4000/bonus", requestOptions);
+            await fetch("https://dijo.space:4000/api/bonus", requestOptions);
         }
     }
 
@@ -50,7 +50,7 @@ export const BonusCard = (item) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        await fetch("http://65.109.234.249:4000/bonus", requestOptions);
+        await fetch("https://dijo.space:4000/api/bonus", requestOptions);
     }
 
     return (
@@ -83,7 +83,7 @@ export const SpecializationCard = (item) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({id: id})
             };
-            await fetch("http://65.109.234.249:4000/specialization", requestOptions);
+            await fetch("https://dijo.space:4000/api/specialization", requestOptions);
         }
     }
 
@@ -97,7 +97,7 @@ export const SpecializationCard = (item) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        await fetch("http://65.109.234.249:4000/specialization", requestOptions);
+        await fetch("https://dijo.space:4000/api/specialization", requestOptions);
     }
 
     return (
