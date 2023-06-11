@@ -4,16 +4,49 @@ import { Button, Col, Row, Statistic, Typography, DatePicker, Space, Input } fro
 const { Title, Paragraph } = Typography;
 
 
-export const FAQCard = (props) => {
+export const FAQCard = (item) => {
+
+    const idx = item.index;
+    const [amount, setAmount] = useState(item.amount)
+    const [bonus, setBonus] = useState(item.bonus)
+    const [id, setId] = useState(item.id)
+    const remove = async (idx) => {
+        item.remove(idx)
+        if (item.id != undefined) {
+            const requestOptions = {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({id: id})
+            };
+            await fetch("https://dijo.space:4000/api/bonus", requestOptions);
+        }
+    }
+
+    const save = async () => {
+        console.log(amount, bonus, id);
+        const data = {
+            amount: amount,
+            bonus: bonus,
+            id: id
+        }
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        await fetch("https://dijo.space:4000/api/bonus", requestOptions);
+    }
 
     return (
         <>
-        <Title level={3} editable={{ onChange: props.onChange }}>{props.title}</Title>
-        <Paragraph editable={{ onChange: props.onChange }}>{props.detail}</Paragraph>
-        
+        <Title level={5} ></Title>
+        <Input addonBefore="Заголовок" onChange={(e) =>setAmount(+e.target.value)} placeholder="amount" defaultValue={item.title} />
+        <br/><br/>
+        <Input addonBefore="Текст" onChange={(e) =>setBonus(+e.target.value)} placeholder="bonus" defaultValue={item.detail} />
+        <br/><br/>
         <Space align="baseline">
-            <Button type="dashed">Сохранить</Button>
-            <Button danger>Удалить пункт</Button>
+            <Button type="dashed" onClick={save}>Сохранить</Button>
+            <Button danger onClick={remove}>Удалить пункт</Button>
         </Space>
         </>
     )

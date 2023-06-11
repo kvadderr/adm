@@ -10,7 +10,6 @@ const { RangePicker } = DatePicker;
 const FAQ: React.FC = () => {
 
   const [isLoading, setLoading] = useState(false);
-  const [editableStr, setEditableStr] = useState('This is an editable text.');
   const [FAQData, setFAQData] = useState();
 
   useEffect(() => {
@@ -19,18 +18,27 @@ const FAQ: React.FC = () => {
       .then((data) => setFAQData(data));
   }, []);
 
-  const updateFieldChanged = () => {
+  const addItem = () => {
+    let newArr = FAQData;
+    FAQData.push({amount: 0, bonus: 0})
+    setFAQData([...FAQData])
+    console.log(FAQData)
+  }
+
+  const removeItem = (index: number) => {
+    FAQData.splice(index, 1)
+    setFAQData([...FAQData])
   }
 
   return <>
 
     <Space align="baseline">
         <Title>FAQ</Title>
-        <Button style={{marginLeft: 30}} type="primary">Добавить пункт</Button>
+        <Button style={{marginLeft: 30}} onClick={addItem} type="primary">Добавить пункт</Button>
     </Space>
     {
         FAQData?.map((datum, index) => {
-            return <FAQCard title={datum.title} detail={datum.detail} />
+            return <FAQCard remove={removeItem} id={datum.id} index={index} title={datum.title} detail={datum.detail} />
         })
     }
    
