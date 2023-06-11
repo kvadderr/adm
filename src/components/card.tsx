@@ -7,8 +7,8 @@ const { Title, Paragraph } = Typography;
 export const FAQCard = (item) => {
 
     const idx = item.index;
-    const [amount, setAmount] = useState(item.amount)
-    const [bonus, setBonus] = useState(item.bonus)
+    const [title, setTitle] = useState(item.title)
+    const [detail, setDetail] = useState(item.detail)
     const [id, setId] = useState(item.id)
     const remove = async (idx) => {
         item.remove(idx)
@@ -18,15 +18,14 @@ export const FAQCard = (item) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({id: id})
             };
-            await fetch("https://dijo.space:4000/api/bonus", requestOptions);
+            await fetch("https://dijo.space:4000/api/faq", requestOptions);
         }
     }
 
     const save = async () => {
-        console.log(amount, bonus, id);
         const data = {
-            amount: amount,
-            bonus: bonus,
+            title: title,
+            detail: detail,
             id: id
         }
         const requestOptions = {
@@ -34,7 +33,7 @@ export const FAQCard = (item) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
         };
-        await fetch("https://dijo.space:4000/api/bonus", requestOptions);
+        await fetch("https://dijo.space:4000/api/faq", requestOptions);
     }
 
     return (
