@@ -40,9 +40,9 @@ export const FAQCard = (item) => {
     return (
         <>
         <Title level={5} ></Title>
-        <Input addonBefore="Заголовок" onChange={(e) =>setTitle(+e.target.value)} placeholder="title" defaultValue={item.title} />
+        <Input addonBefore="Заголовок" onChange={(e) =>setTitle(e.target.value)} placeholder="title" defaultValue={item.title} />
         <br/><br/>
-        <Input addonBefore="Текст" onChange={(e) =>setDetail(+e.target.value)} placeholder="detail" defaultValue={item.detail} />
+        <Input addonBefore="Текст" onChange={(e) =>setDetail(e.target.value)} placeholder="detail" defaultValue={item.detail} />
         <br/><br/>
         <Space align="baseline">
             <Button type="dashed" onClick={save}>Сохранить</Button>
