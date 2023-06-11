@@ -28,6 +28,7 @@ export const FAQCard = (item) => {
             detail: detail,
             id: id
         }
+        console.log('data', data);
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -39,9 +40,9 @@ export const FAQCard = (item) => {
     return (
         <>
         <Title level={5} ></Title>
-        <Input addonBefore="Заголовок" onChange={(e) =>setTitle(+e.target.value)} placeholder="amount" defaultValue={item.title} />
+        <Input addonBefore="Заголовок" onChange={(e) =>setTitle(+e.target.value)} placeholder="title" defaultValue={item.title} />
         <br/><br/>
-        <Input addonBefore="Текст" onChange={(e) =>setDetail(+e.target.value)} placeholder="bonus" defaultValue={item.detail} />
+        <Input addonBefore="Текст" onChange={(e) =>setDetail(+e.target.value)} placeholder="detail" defaultValue={item.detail} />
         <br/><br/>
         <Space align="baseline">
             <Button type="dashed" onClick={save}>Сохранить</Button>
