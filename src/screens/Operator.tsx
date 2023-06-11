@@ -49,8 +49,6 @@ const Operator = () => {
         render: (userId) => <a onClick={() => onOpenCall(userId)}>Отчет</a>},
     {title: 'Подробнее', dataIndex: 'singleData', key: 'singleData', 
         render: (record) => <a onClick={() => onEditOperator(record)}>Подробнее</a>},
-    {title: 'Отзывы', dataIndex: 'detail', key: 'detail', 
-        render: () => <a>Отзывы</a>},
   ]; 
 
   const onOpenCall = (data) => {
